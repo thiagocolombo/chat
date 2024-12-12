@@ -1,5 +1,6 @@
+//import { askGPT } from '../services/openaiService';
 import { Router, Request, Response } from 'express';
-import { askGPT } from '../services/openaiService';
+import { askAIMLAPI } from '../services/aimlapiService';
 
 const router = Router();
 
@@ -15,7 +16,7 @@ router.post('/', async (req: Request, res: Response) => {
 
     try {
         console.log('📨 Mensagem recebida:', message);
-        const response = await askGPT(message);
+        const response = await askAIMLAPI(message);
         console.log('✅ Resposta do serviço GPT:', response);
         res.status(200).json({ response });
     } catch (error: any) {
@@ -25,6 +26,8 @@ router.post('/', async (req: Request, res: Response) => {
     }
     
 });
+ 
+export default router; 
 
 
-export default router;
+

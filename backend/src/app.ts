@@ -6,7 +6,7 @@ import chatbotRoutes from './routes/chatbotRoutes';
 
 const app = express();
 const PORT = 5000;
-
+console.log('🔑 AIMLAPI_API_KEY:', process.env.AIMLAPI_API_KEY);
 app.use(cors());
 app.use(bodyParser.json());
 

@@ -35,7 +35,7 @@ const Chatbot: React.FC = () => {
 
     return (
         <div className="p-6 max-w-md mx-auto font-sans">
-            <h1 className="text-2xl font-bold mb-4 text-center">Chatbot</h1>
+            <h1 className="text-2xl font-bold mb-4 text-center text-sky-500 hover:text-sky-600">Chatbot</h1>
             <div className="border border-gray-300 rounded-lg p-4 h-80 overflow-y-auto mb-4 bg-white shadow">
                 {messages.map((msg, idx) => (
                     <div key={idx} className="mb-3">
@@ -52,7 +52,7 @@ const Chatbot: React.FC = () => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Digite sua mensagem"
-                    className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sky-500"
                 />
                 <button
                     onClick={sendMessage}
