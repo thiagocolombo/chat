@@ -1,0 +1,6 @@
+
+# VSCode
+/.vscode/
+
+# Pacotes NPM
+/node_modules
