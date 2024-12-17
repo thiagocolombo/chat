@@ -11,6 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "textchat": "rgb(97 109 101)",
+        
       },
     },
   },

@@ -7,6 +7,12 @@ const Chatbot: React.FC = () => {
     const [loading, setLoading] = useState(false); // Indicador de carregamento
     const [error, setError] = useState<string | null>(null); // Tratamento de erro
 
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            sendMessage(); // Chama a função de envio ao apertar enter no campo de texto do formulário.
+        }
+    };
+
     const sendMessage = async () => {
         if (!input.trim()) return;
 
@@ -15,7 +21,7 @@ const Chatbot: React.FC = () => {
         setLoading(true);
         setError(null);
 
-        try {
+        try { 
             // Requisição para o backend
             const response = await axios.post('http://localhost:5000/api/chatbot', {
                 message: input,
@@ -35,12 +41,12 @@ const Chatbot: React.FC = () => {
 
     return (
         <div className="p-6 max-w-md mx-auto font-sans">
-            <h1 className="text-2xl font-bold mb-4 text-center text-sky-500 hover:text-sky-600">Chatbot</h1>
+            <h1 className="text-2xl font-bold mb-4 text-center text-white uppercase">Fale com o seu Ouvidor</h1>
             <div className="border border-gray-300 rounded-lg p-4 h-80 overflow-y-auto mb-4 bg-white shadow">
-                {messages.map((msg, idx) => (
+                {messages.map((msg, idx) => ( 
                     <div key={idx} className="mb-3">
                         {msg.user && <div className="text-blue-500"><strong>Você:</strong> {msg.user}</div>}
-                        {msg.bot && <div className="text-green-500"><strong>Bot:</strong> {msg.bot}</div>}
+                        {msg.bot && <div className="text-[rgb(97 109 101)]"><strong>Ouvidor Digital:</strong> {msg.bot}</div>}
                     </div>
                 ))}
                 {loading && <div className="text-gray-500">Carregando...</div>}
@@ -51,8 +57,9 @@ const Chatbot: React.FC = () => {
                     type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={handleKeyPress}
                     placeholder="Digite sua mensagem"
-                    className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sky-500"
+                    className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#7d7d7d]"
                 />
                 <button
                     onClick={sendMessage}
