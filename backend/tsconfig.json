@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "es6",              // Target ES6 ou superior
+      "module": "commonjs",         // Suporte para módulos CommonJS (Node.js)
+      "strict": true,               // Ativa modo estrito
+      "esModuleInterop": true,      // Compatibilidade com ESModules
+      "skipLibCheck": true,         // Ignora verificações em bibliotecas
+      "types": ["node"]             // Adiciona os tipos do Node.js
+    },
+    "include": ["./**/*.ts"],       // Inclui todos os arquivos .ts
+    "exclude": ["node_modules"]     // Exclui a pasta node_modules
+  }  

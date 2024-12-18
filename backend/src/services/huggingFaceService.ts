@@ -10,7 +10,7 @@ if (!HUGGING_FACE_API_KEY) {
     throw new Error('❌ A chave HUGGING_FACE_API_KEY não está definida no arquivo .env.');
 }
 
-// Configura a biblioteca translate
+// Configura a biblioteca translate 
 translate.engine = 'google'; // Define o motor do Google Translate
 translate.key = ''; // Opcional: para uso sem chave de API Google
 
